@@ -1,0 +1,379 @@
+# =============================================
+# ROOT PROJECT .GITIGNORE
+# =============================================
+
+# =============================================
+# CUSTOM EXCLUSIONS (Updated for Traffic Light System)
+# =============================================
+# Keep important project documentation and scripts
+# *.md - REMOVED to keep README.md and spec files
+# *.ps1 - REMOVED to keep Kafka management scripts
+# *.bat - REMOVED to keep build and test automation scripts
+# *.sql - REMOVED to keep database setup scripts
+
+# JSON test files - exclude from repository
+#*.json
+
+# Traffic Light System specific exclusions
+traffic-light-system/.jqwik-database
+traffic-light-system/target/
+traffic-light-system/logs/
+traffic-light-system/kafka-logs/
+traffic-light-system/zookeeper/
+
+# =============================================
+# PROJECT-WIDE LOGS DIRECTORY
+# =============================================
+# Skip all logs in the main logs directory
+logs/
+Logs/
+.claude
+.codex
+.idea
+.vscode
+# =============================================
+# SPRING BOOT BUILD ARTIFACTS
+# =============================================
+# Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
+
+# Gradle
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# JAR/WAR/EAR files
+*.jar
+*.war
+*.ear
+*.nar
+
+# =============================================
+# LOGS AND TEMPORARY FILES
+# =============================================
+# Application logs
+*.log
+*.log.*
+log/
+application.log*
+spring.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =============================================
+# IDE CONFIGURATIONS
+# =============================================
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.idea_modules/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+nb-configuration.xml
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.externalToolBuilders/
+*.launch
+.pydevproject
+.cproject
+.autotools
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+
+# =============================================
+# OPERATING SYSTEM FILES
+# =============================================
+### Windows ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================
+# SECURITY AND SENSITIVE FILES
+# =============================================
+# Private keys and certificates - COMMENTED OUT AS REQUESTED
+# *-private*.pem
+# *-private*.key
+# *.p12
+# *.jks
+# *.keystore
+# keystore.*
+# private.*
+# *.key
+# *.pem
+# *.crt
+# *.cer
+# *.pfx
+
+# Environment and configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+# application.properties
+# application.yml
+# application-*.properties
+# application-*.yml
+# application-*.yaml
+!application-example.properties
+!application-template.yml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+h2/
+hsqldb/
+
+# =============================================
+# TESTING AND COVERAGE
+# =============================================
+# Test reports
+test-output/
+*.exec
+coverage/
+.nyc_output/
+lcov.info
+*.lcov
+jacoco.xml
+jacoco-it.xml
+site/
+
+# JUnit
+junit/
+TEST-*.xml
+
+# =============================================
+# SPRING BOOT SPECIFIC
+# =============================================
+# Spring Boot DevTools
+.spring-boot-devtools.properties
+
+# Spring Boot Actuator
+actuator/
+
+# Spring Boot Banner
+banner.txt
+
+# =============================================
+# DOCKER AND CONTAINERIZATION
+# =============================================
+# Docker
+.dockerignore
+Dockerfile.local
+docker-compose.override.yml
+.docker/
+
+# Kubernetes
+*.kubeconfig
+
+# =============================================
+# CACHING AND DEPENDENCIES
+# =============================================
+# Node modules (if using frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Package files
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# =============================================
+# BACKUP AND ARCHIVE FILES
+# =============================================
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.archive
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# =============================================
+# MISCELLANEOUS
+# =============================================
+# Thumbnails
+*.thumb
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.idea_modules/
+
+# Generated files
+generated/
+.generated/
+
+# Cache directories
+.cache/
+cache/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# =============================================
+# PROJECT-SPECIFIC EXCLUSIONS
+# =============================================
+# Kafka logs
+**/kafka-logs/
+**/zookeeper/
+
+# Elasticsearch data
+**/elasticsearchlogs/
+
+# SonarQube data
+**/sonardata/
+**/sonarlogs/
+**/sonartemp/
+
+# Application-specific logs
+**/application-logs/
+**/kafka-streams-state/
+**/kraft-*/

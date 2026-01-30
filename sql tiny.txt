@@ -1,0 +1,41 @@
+
+PySpark Questions post : https://lnkd.in/gcdwpPP4
+
+
+PySpark Questions post : https://lnkd.in/ggzGfAr5
+
+
+SQL Questions post: https://lnkd.in/giubbrAV
+
+
+SQL Questions Post: https://lnkd.in/gSPAp9qq
+
+
+
+Let’s dive into essential SQL concepts and queries you can't afford to miss:  
+
+Explain all types of joins.  
+What are subqueries and CTEs, and which is preferable?  
+Write a query to get a list of top 10 titles that are not in the user titles table.  
+What is an index in SQL and why is it useful?  
+How do you use HAVING and WHERE in an SQL query?  
+Write a query to get the average renewal time for each user, using start date and end date columns.  
+Is A LEFT JOIN B the same as B RIGHT JOIN A?  
+Explain RANK, DENSE_RANK, ROW_NUMBER with examples.  
+Write an SQL query to get the number of employees working in each department (Employees and Department tables given).  
+Write an SQL query to get the number of employees present in the Employees table and not in the Employees backup table.  
+Difference between LIKE and = in SQL.  
+Why is = faster than LIKE in SQL?  
+How do indexes improve performance in SQL?  
+How to implement SCD Type 1 in a stored procedure?  
+What are wildcards in SQL?  
+Generate unique non-repeating pairs like 'A-B' from a given table using SQL.  
+What are fact and dimension tables? Explain with an example.  
+SQL query to find the number of customers who bought an iPhone from a store located in Mumbai in the last month.  
+Write a query to find non-repeating values from two SQL tables with sets {1, 2, 3, 4, 5, 6} and {4, 5, 6, 7}.  
+How to calculate the variation in sales from yesterday to today in SQL?  
+How to handle NULL values in SQL.  
+SQL query to find the second highest salary.  
+How would you find departments that have no employees?  
+How to pivot quarterly data into a year-wise format using SQL?  
+How to restrict inserts in a table to specific cities using SQL?  
