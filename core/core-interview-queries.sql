@@ -41,6 +41,13 @@ SELECT e.name AS employee_name, m.name AS manager_name
 FROM employee e
 LEFT JOIN employee m ON e.manager_id = m.id;
 
+-- 13. Manager: List managers and their direct reports
+SELECT m.name AS manager_name, GROUP_CONCAT(e.name) AS employees
+FROM employee m
+LEFT JOIN employee e ON m.id = e.manager_id
+WHERE e.id IS NOT NULL
+GROUP BY m.name;
+
 -- 7. FULL OUTER JOIN (Emulated with UNION)
 SELECT e.name AS employee_name, m.name AS manager_name
 FROM employee_manager e

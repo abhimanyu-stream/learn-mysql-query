@@ -47,6 +47,66 @@ WHERE o.order_date = (
     WHERE customer_id = c.customer_id
 );
 ```
+Great question! Let me explain the difference between JOIN (which is actually INNER JOIN) and LEFT JOIN.
+
+JOIN (INNER JOIN)
+JOIN is shorthand for INNER JOIN. It returns only the rows where there's a match in BOTH tables.
+
+In your example:
+
+SELECT c.customer_id, c.name, o.order_id, o.order_date
+FROM customer c
+JOIN orders o ON c.customer_id = o.customer_id
+This returns only customers who HAVE orders. If a customer has no orders, they won't appear in the result.
+
+LEFT JOIN (LEFT OUTER JOIN)
+LEFT JOIN returns ALL rows from the left table (first table), and matching rows from the right table. If there's no match, it returns NULL for the right table's columns.
+
+SELECT c.customer_id, c.name, o.order_id, o.order_date
+FROM customer c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+This returns ALL customers, even those without orders. For customers without orders, order_id and order_date will be NULL.
+
+Visual Example
+Let's say you have:
+
+customer table:
+
+customer_id	name
+1	Alice
+2	Bob
+3	Charlie
+orders table:
+
+order_id	customer_id	order_date
+101	1	2024-01-15
+102	1	2024-02-20
+103	2	2024-01-10
+INNER JOIN Result:
+customer_id | name  | order_id | order_date
+1          | Alice | 101      | 2024-01-15
+1          | Alice | 102      | 2024-02-20
+2          | Bob   | 103      | 2024-01-10
+Charlie is NOT included because he has no orders.
+
+LEFT JOIN Result:
+customer_id | name    | order_id | order_date
+1          | Alice   | 101      | 2024-01-15
+1          | Alice   | 102      | 2024-02-20
+2          | Bob     | 103      | 2024-01-10
+3          | Charlie | NULL     | NULL
+Charlie IS included with NULL values for order columns.
+
+When to Use Which?
+INNER JOIN: When you only want records that exist in both tables (e.g., "customers who have placed orders")
+LEFT JOIN: When you want all records from the first table, regardless of matches (e.g., "all customers, including those who haven't ordered yet")
+Your Original Query
+In your query with the subquery:
+
+WHERE o.order_date = (SELECT MAX(order_date)...)
+Using INNER JOIN makes sense because you specifically want customers with their LAST order. If you used LEFT JOIN, you'd get customers without orders too, but the WHERE clause would filter them out anyway since NULL can't equal a date.
+
+
 
 ## 6. Self Join – Employees and Their Managers
 ```sql

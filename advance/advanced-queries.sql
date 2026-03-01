@@ -116,7 +116,10 @@ INSERT INTO employee (name, salary, department_id, manager_id, join_date, last_u
 -- 1. Ranks employees by salary using window function RANK().
 SELECT name, salary, RANK() OVER (ORDER BY salary DESC) AS salary_rank
 FROM employee;
-
+-- 9. Rank Employees by Salary within Each Department
+SELECT name, department_id, salary,
+RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS salary_rank
+FROM employee;
 -- 2. Uses CTE to find employees above average salary.
 WITH avg_salary AS (
     SELECT AVG(salary) AS avg_sal FROM employee
